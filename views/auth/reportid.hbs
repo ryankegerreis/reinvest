@@ -1,3 +1,94 @@
+<div>
+  <h1>{{title}}</h1>
+</div>
+
+{{!-- Basic Info  --}}
+<div>
+  <h2> {{address}}, {{city}}, {{state}} {{zip}}</h2>
+</div>
+
+
+{{!-- Table 1 --}}
+<table>
+  <tr>
+    <th>Purchase Price: </th>
+    <th>${{purchasePrice}}</th>
+  </tr>
+
+  <tr>
+    <th>Purchase Closing Costs: </th>
+    <th>${{closingCosts}}</th>
+  </tr>
+
+  <tr>
+    <th>Estimated Repair Costs: </th>
+    <th>${{repairCosts}}</th>
+  </tr>
+
+  <tr>
+    <th>Total Project Cost:</th>
+    <th>${{totalCashNeededRun}}</th>
+  </tr>
+
+  <tr>
+    {{!-- Blank Row --}}
+  </tr>
+
+  <tr>
+    <th>Down Payment: </th>
+    <th>${{downPayment}}</th>
+  </tr>
+
+  <tr>
+    <th>Loan Amount: </th>
+    <th>${{principalRun}}</th>
+  </tr>
+
+  <tr>
+    <th>Loan Points: </th>
+    <th>${{lenderFees}}</th>
+  </tr>
+
+  <tr>
+    <th>Amortized Over: </th>
+    <th>{{loanLength}}</th>
+  </tr>
+
+  <tr>
+    <th>Loan Interest Rate: </th>
+    <th>{{interestRate}}</th>
+  </tr>
+
+  <tr>
+    <th>Monthly P&I: </th>
+    <th>${{monthlyPaymentRun}}</th>
+  </tr>
+
+  <tr>
+    <th>Total Cash Needed: </th>
+    <th>${{totalCashNeededRun}}</th>
+  </tr>
+
+</table>
+
+{{!-- Table 2 --}}
+<table>
+  <tr>
+    <th>{{totalMonthlyIncomeRun}}</th>
+  </tr>
+
+  <tr>
+    <th>{{totalMonthlyExpensesRun}}</th>
+  </tr>
+
+  <tr>
+    <th>{{cashFlowRun}}</th>
+  </tr>
+
+
+</table>
+
+
 <p>
   Fixed Expense ${{fixedExpenseRun}} <br>
   Monthly Income {{totalMonthlyIncomeRun}} <br>
@@ -13,6 +104,10 @@
   annual pretax cashflow {{annualPretaxCashflowRun}}<br>
   monthly payment debt service {{monthlyPaymentRun}}<br>
   yearly payment debt service {{yearlyPaymentRun}}<br>
+  {{!-- Test Purposes Only --}}
+  Variable Expenses: {{variableExpensesRun}}<br>
+  Annual Pretax Cashflow: {{annualPretaxCashflowRun}}<br>
+  Total cash Needed: {{totalCashNeededRun}}<br>
 </p>
 
 {{!-- Address: {{address}}<br>

@@ -91,17 +91,17 @@ authRoutes.get("/report", ensureAuthenticated, (req, res, next) => {
 authRoutes.post("/report", ensureAuthenticated, (req, res, next) => {
   const newReport = new Report(
     req.body
-  );
-
+  )
+  newReport.owner = req.user._id //Add user id to report 
   //Saves a new report
   newReport.save(err => {
     if (err) {
       return next(err);
     } else {
-      res.redirect("/my-reports");
+      res.redirect("/my-reports")
     }
-  });
-});
+  })
+})
 
 //Go to user reports
 authRoutes.get("/my-reports", ensureAuthenticated, (req, res, next) => {
@@ -164,6 +164,8 @@ authRoutes.get("/my-reports/reportid", (req, res, next) => {
 
     let yearlyPaymentRun = yearlyPayment(reportID);
     reportID.yearlyPaymentRun = yearlyPaymentRun
+
+
 
     res.render("auth/reportid", reportID);
   });
@@ -231,32 +233,30 @@ function cashFlow(reportID) {
   return totalMonthlyIncome(reportID) - totalMonthlyExpenses(reportID)
 }
 
-//Operating Income
+//Operating Income Monthly
 function operatingIncome(reportID) {
   let vacancyExpense = reportID.grossMonthlyRent * reportID.vacancy;
-  return reportID.grossMonthlyRent + reportID.otherIncome - vacancyExpense * 12
+  return reportID.grossMonthlyRent + reportID.otherIncome - vacancyExpense
 };
 
-//OpEx
+//OpEx Monthly
 function operatingExpenses(reportID) {
   return (
     (reportID.grossMonthlyRent * reportID.managementFees +
       reportID.grossMonthlyRent * reportID.repairsAndMaintenance +
       reportID.propertyTax +
-      reportID.propertyInsurance +
-      reportID.misc) *
-    12
+      reportID.propertyInsurance)
   );
 }
 
-//NOI
+//NOI, needs to be yearly
 function netOperatingIncome(reportID) {
-  return operatingIncome(reportID) - operatingExpenses(reportID);
+  return (operatingIncome(reportID) - operatingExpenses(reportID)) * 12;
 }
 
 //Cap Rate
 function capRate(reportID) {
-  return netOperatingIncome(reportID) / reportID.purchasePrice;
+  return (netOperatingIncome(reportID) / reportID.purchasePrice) * 100;
 }
 
 //Cash On Cash Return
@@ -271,14 +271,19 @@ function totalCashNeeded(reportID) {
 
 //Annual Pretax Cashflow
 function annualPretaxCashflow(reportID) {
-  return operatingIncome(reportID) - operatingExpenses(reportID) - yearlyPayment(reportID)
+  let vacancyExpense = reportID.grossMonthlyRent * reportID.vacancy;
+
+  return ((reportID.grossMonthlyRent + reportID.otherIncome) - (vacancyExpense + operatingExpenses(reportID) + monthlyPayment(reportID))) * 12;
 }
 
 //Monthly Debt Service Payment
 function monthlyPayment(reportID) {
   var term = reportID.loanLength * 12;
+  var amt = reportID.purchasePrice - reportID.downPayment;
   var intr = reportID.interestRate / 1200;
-  return principal(reportID) * intr / (1 - (Math.pow(1 / (1 + intr), term)))
+
+  return amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1);
+
 };
 
 //Yearly Payment
