@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00b7ff; }
+
+p {
+  color: white; }
+
+.link-margin {
+  margin: 20px; }
+
+.nav-correction {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.background-image {
+  background-image: url("../images/house.jpg");
+  background-size: cover;
+  background-color: #cccccc;
+  margin-top: 5px; }
+
+/*# sourceMappingURL=style.css.map */

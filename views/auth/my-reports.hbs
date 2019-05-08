@@ -1,0 +1,10 @@
+My Reports <br>
+<a href="/report" class="btn-large">Create A New Report</a>
+
+<ul class="list-group">
+  {{#each myReport}}
+  <li>
+    <a href="/my-reports/reportid?id={{this._id}}">{{title}}</a>
+  </li>
+  {{/each}}
+</ul>

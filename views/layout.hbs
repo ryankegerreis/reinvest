@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  {{!-- jQuery --}}
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  {{!-- Bootstrap --}}
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  {{!-- My CSS --}}
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  {{!-- My JS --}}
+  <script src="../public/javascripts/script.js"></script>
+  <title>{{title}}</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-correction">
+
+  <!--  Show this only on mobile to medium screens  -->
+  <a class="navbar-brand d-lg-none" href="#">Navbar</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
+
+    <a class="navbar-brand d-none d-lg-block" href="/">Reinvest</a>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my-reports">My Reports</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<body class="background-image">
+
+
+
+  {{{body}}}
+
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>
