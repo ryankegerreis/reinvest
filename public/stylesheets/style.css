@@ -1,5 +1,11 @@
 * {
-  font-family: sans-serif; }
+  font-family: Roboto; }
+
+.font-report {
+  font-size: 15px; }
+
+.thin {
+  font-weight: 300; }
 
 body {
   padding: 50px;
@@ -42,8 +48,15 @@ a {
   text-decoration-color: white; }
 
 .width {
-  width: 70vw;
+  height: 10vh;
   margin-left: auto;
   margin-right: auto; }
+
+.table-border {
+  margin-right: 2vw; }
+
+.table-fix {
+  margin-left: .7vw;
+  font-size: 1.3em; }
 
 /*# sourceMappingURL=style.css.map */

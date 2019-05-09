@@ -1,7 +1,15 @@
 
 
 *{
-  font-family: sans-serif;
+  font-family:Roboto;
+}
+
+.font-report {
+font-size: 15px;
+}
+
+.thin {
+  font-weight: 300;
 }
 
 body {
@@ -12,26 +20,6 @@ body {
 a {
   color: #00b7ff;
 }
-
-// form {
-//   color: white; 
-// }
- 
-// p {
-//   color: white;
-// }
-
-
-
-
-//Flex and movement
-
-// .align-center{
-// display: flex;
-// // align-content: center;
-// // justify-items: center;
-// align-self: center;
-// }
 
 .link-margin{
   margin:20px;
@@ -81,11 +69,16 @@ a {
 }
 
 .width {
-  width: 70vw;
+  height:10vh;
   margin-left: auto;
   margin-right: auto;
 }
 
-// .cardbg {
-// background-color: aqua;
-// }
+.table-border {
+  margin-right: 2vw;
+}
+
+.table-fix{
+  margin-left: .7vw;
+  font-size: 1.3em;
+}

@@ -1,46 +1,23 @@
-<div class="width">
-  <h1>{{title}}</h1>
-</div>
-
-
-{{!-- Basic Info  --}}
-<div class="width">
-  <h2> {{address}}, {{city}}, {{state}} {{zip}}</h2>
-</div>
-
-<hr>
-
-<div class="container row width">
-
-  <div class="col-xs-3">
-    {{!-- Purchase Table --}}
-    <div class="row">
-      <table class="col-xs-12">
-        <tr>
-          <th>Purchase Price: </th>
-          <th>$ {{purchasePrice}}</th>
-        </tr>
-      </table>
-    </div>
-    <hr>
-    {{!-- Table 1 --}}
-    <div class="row">
-      <table class="table table-borderless col-xs-12">
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <!-------------------- TABLE HERE-------------------->
+      <table class="table table-borderless col-xs-9 table-border">
 
 
         <tr>
-          <th>Purchase Closing Costs: </th>
-          <th>$ {{closingCosts}}</th>
+          <th class="thin">Purchase Closing Costs: </th>
+          <th class="text-md-right">$ {{closingCosts}}</th>
         </tr>
 
         <tr>
-          <th>Estimated Repair Costs: </th>
-          <th>$ {{repairCosts}}</th>
+          <th class="thin">Estimated Repair Costs: </th>
+          <th class="text-md-right">$ {{repairCosts}}</th>
         </tr>
 
         <tr>
-          <th>Total Project Cost:</th>
-          <th>$ {{totalCashNeededRun}}</th>
+          <th class="thin">Total Project Cost:</th>
+          <th class="text-md-right">$ {{totalCashNeededRun}}</th>
         </tr>
 
         <tr>
@@ -48,135 +25,87 @@
         </tr>
 
         <tr>
-          <th>Down Payment: </th>
-          <th>$ {{downPayment}}</th>
+          <th class="thin">Down Payment: </th>
+          <th class="text-md-right">$ {{downPayment}}</th>
         </tr>
 
         <tr>
-          <th>Loan Amount: </th>
-          <th>$ {{principalRun}}</th>
+          <th class="thin">Loan Amount: </th>
+          <th class="text-md-right">$ {{principalRun}}</th>
         </tr>
 
         <tr>
-          <th>Loan Points: </th>
-          <th>$ {{lenderFees}}</th>
+          <th class="thin">Loan Points: </th>
+          <th class="text-md-right">$ {{lenderFees}}</th>
         </tr>
 
         <tr>
-          <th>Amortized Over: </th>
-          <th>{{loanLength}} Years</th>
+          <th class="thin">Amortized Over: </th>
+          <th class="text-md-right">{{loanLength}} Years</th>
         </tr>
 
         <tr>
-          <th>Loan Interest Rate: </th>
-          <th>{{interestRate}} %</th>
+          <th class="thin">Loan Interest Rate: </th>
+          <th class="text-md-right">{{interestRate}} %</th>
         </tr>
 
         <tr>
-          <th>Monthly P&I: </th>
-          <th>$ {{monthlyPaymentRun}}</th>
+          <th class="thin">Monthly P&I: </th>
+          <th class="text-md-right">$ {{monthlyPaymentRun}}</th>
         </tr>
 
         <tr>
-          <th>Total Cash Needed: </th>
-          <th>$ {{totalCashNeededRun}}</th>
+          <th class="thin">Total Cash Needed: </th>
+          <th class="text-md-right">$ {{totalCashNeededRun}}</th>
         </tr>
 
       </table>
     </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <!--------------------TABLE HERE VV TABLE RESPONSIVE HERE.. MAYBE CHANGE-------------------->
+          <table class="table table-responsive table-borderless col-xs-9">
+            <tr>
+              <th>$ {{totalMonthlyIncomeRun}}</th>
+              <th>$ {{totalMonthlyExpensesRun}}</th>
+              <th>$ {{cashFlowRun}}</th>
+              <th>{{capRateRun}}%</th>
+            </tr>
+
+            <tr>
+              <th class="thin">Monthly Income</th>
+              <th class="thin">Monthly Expenses</th>
+              <th class="thin">Monthly Cash Flow</th>
+              <th class="thin">Cap Rate</th>
+            </tr>
+
+            <tr>
+              <th>$ {{netOperatingIncomeRun}}</th>
+              <th>$ {{totalCashNeededRun}}</th>
+              <th>{{cashOnCashRun}} %</th>
+            </tr>
+
+            <tr>
+              <th class="thin">Net Operating Income</th>
+              <th class="thin">Total Cash Needed</th>
+              <th class="thin">Cash On Cash ROI</th>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <!---------------------------- CHART  HERE------------------------------->
+          <canvas id="myChart" class="width" width="100" height="100"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
-
-  {{!-- Table 2 --}}
-  <div class="row">
-    <table class="table table-borderless col-xs-9">
-      <tr>
-        <th>$ {{totalMonthlyIncomeRun}}</th>
-        <th>$ {{totalMonthlyExpensesRun}}</th>
-        <th>$ {{cashFlowRun}}</th>
-        <th>{{capRateRun}}%</th>
-      </tr>
-
-      <tr>
-        <th>Monthly Income</th>
-        <th>Monthly Expenses</th>
-        <th>Monthly Cash Flow</th>
-        <th>Cap Rate</th>
-      </tr>
-
-      <tr>
-        <th>$ {{netOperatingIncomeRun}}</th>
-        <th>$ {{totalCashNeededRun}}</th>
-        <th>{{cashOnCashRun}} %</th>
-      </tr>
-
-      <tr>
-        <th>Net Operating Income</th>
-        <th>Total Cash Needed</th>
-        <th>Cash On Cash ROI</th>
-      </tr>
-
-    </table>
-  </div>
-
-
-
-
-  <div class="width row">
-    <canvas id="myChart" class="col-xs-9"></canvas>
-  </div>
-
-  <script>
-    let reportID = JSON.parse('{{{json reportID}}}')
-  </script>
-
 </div>
-{{!-- <p>
-  Fixed Expense ${{fixedExpenseRun}} <br>
-  Monthly Income {{totalMonthlyIncomeRun}} <br>
-  Variable Expenses {{variableExpensesRun}}<br>
-  total monthly expenses {{totalMonthlyExpensesRun}}<br>
-  cashflow {{cashFlowRun}}<br>
-  operating income {{operatingIncomeRun}}<br>
-  operating expenses {{operatingExpensesRun}}<br>
-  net operating income {{netOperatingIncomeRun}}<br>
-  Cap Rate {{capRateRun}}<br>
-  cash on cash {{cashOnCashRun}}<br>
-  total cash needed {{totalCashNeededRun}}<br>
-  annual pretax cashflow {{annualPretaxCashflowRun}}<br>
-  monthly payment debt service {{monthlyPaymentRun}}<br>
-  yearly payment debt service {{yearlyPaymentRun}}<br>
 
-Variable Expenses: {{variableExpensesRun}}<br>
-Annual Pretax Cashflow: {{annualPretaxCashflowRun}}<br>
-Total cash Needed: {{totalCashNeededRun}}<br>
-</p> --}}
 
-{{!-- Address: {{address}}<br>
-City: {{city}}<br>
-State: {{state}}<br>
-Zip Code: {{zip}}<br>
-Property Tax: {{propertyTax}}<br>
-Purchase Price: {{purchasePrice}}<br>
-Estimated After Repair Value :{{ARV}}<br>
-Closing Costs: {{closingCosts}}<br>
-Estimated Repair Costs: {{repairCosts}}<br>
-Down Payment of Purchase Price: {{downPayment}}<br>
-Interest Rate: {{interestRate}}<br>
-Additional Lender Fees: {{lenderFees}}<br>
-Length of Loan: {{loanLength}}<br>
-Gross Monthly Rent: {{grossMonthlyRent}}<br>
-Other Income: {{otherIncome}}<br>
-Electricity: {{electricity}}<br>
-Water and Sewer: {{waterAndSewer}}<br>
-Private Mortgage Insurance: {{PMI}}<br>
-Garbage: {{garbage}}<br>
-HOA Fees: {{HOA}}<br>
-Property Insurance: {{propertyInsurance}}<br>
-Vacancy: {{vacancy}}<br>
-Repairs and Maintenance: {{repairsAndMaintenance}}<br>
-Capital Expenditure: {{capEx}}<br>
-Management Fees: {{managementFees}}<br>
-Income Growth: {{incomeGrowth}}<br>
-Property Value Growth: {{pvGrowth}}<br>
-Expense Growth: {{expenseGrowth}}<br>
-Sales Expense: {{salesExpenses}}<br> --}}
+<script>
+  let reportID = JSON.parse('{{{json reportID}}}')
+</script>
