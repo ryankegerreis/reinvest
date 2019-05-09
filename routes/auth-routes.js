@@ -165,8 +165,22 @@ authRoutes.get("/my-reports/reportid", (req, res, next) => {
     let yearlyPaymentRun = yearlyPayment(reportID);
     reportID.yearlyPaymentRun = yearlyPaymentRun
 
+    //New
+    let managementExpenseRun = managementExpense(reportID);
+    reportID.managementExpenseRun = managementExpenseRun
 
+    let vacancyExpenseRun = vacancyExpense(reportID);
+    reportID.vacancyExpenseRun = vacancyExpenseRun
 
+    let repairExpenseRun = maintenanceExpense(reportID);
+    reportID.repairExpenseRun = repairExpenseRun
+
+    let capExRun = capExpense(reportID);
+    reportID.capExRun = capExRun
+
+    reportID.reportID = reportID
+
+    console.log('This is ReportID', reportID.reportID)
     res.render("auth/reportid", reportID);
   });
 });
@@ -185,11 +199,26 @@ function ensureAuthenticated(req, res, next) {
   }
 }
 
+
+console.log('Test')
+
 module.exports = authRoutes;
 
 
 
+
+
+
 // ===================== Functions =======================
+
+function managementExpense(reportID) { reportID.grossMonthlyRent * reportID.managementFees };
+
+function vacancyExpense(reportID) { reportID.grossMonthlyRent * reportID.vacancy }
+
+function maintenanceExpense(reportID) { reportID.grossMonthlyRent * reportID.repairsAndMaintenance };
+
+function capExpense(reportID) { reportID.grossMonthlyRent * reportID.capEx };
+
 //Principal
 function principal(reportID) {
   return reportID.purchasePrice - reportID.downPayment;
@@ -290,4 +319,3 @@ function monthlyPayment(reportID) {
 function yearlyPayment(reportID) {
   return monthlyPayment(reportID) * 12
 }
-

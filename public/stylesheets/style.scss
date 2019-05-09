@@ -1,5 +1,9 @@
 
 
+*{
+  font-family: sans-serif;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -13,9 +17,9 @@ a {
 //   color: white; 
 // }
  
-p {
-  color: white;
-}
+// p {
+//   color: white;
+// }
 
 
 
@@ -49,3 +53,39 @@ p {
 
 
 
+
+
+
+
+// My Reports
+
+.canvaschart {
+  width: 400px;
+  height:400px;
+}
+
+.cardimg-size {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardtxt-size {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-decoration-color: white;
+}
+
+.width {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .cardbg {
+// background-color: aqua;
+// }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +12,24 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
   {{!-- Bootstrap --}}
+
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    id="bootstrap-css">
+    id="bootstrap-css" />
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  {{!-- Chart.js --}}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
   {{!-- My CSS --}}
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  {{!-- Chart.js(Online) --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
   {{!-- My JS --}}
-  <script src="../public/javascripts/script.js"></script>
+
+
   <title>{{title}}</title>
 </head>
 
@@ -47,13 +58,14 @@
   </div>
 </nav>
 
-<body class="background-image">
 
 
 
-  {{{body}}}
 
-  <script src="/javascripts/script.js"></script>
-</body>
+{{{body}}}
+
+<footer>
+  <script src="/javascripts/charts.js"></script>
+</footer>
 
 </html>

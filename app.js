@@ -18,16 +18,9 @@ const request = require("request");
 
 var cheerio = require("cheerio");
 
-//Cherio web scraper
-// request(
-//   "https://hackernoon.com/cheerio-node-nodejs-tutorial-web-html-scraping-note-a4ceb37d9cbb",
-//   function(err, resp, html) {
-//     if (!err) {
-//       const $ = cheerio.load(html);
-//       console.log($(".section-inner #c4c9").text());
-//     }
-//   }
-// );
+hbs.registerHelper('json', function (context) {
+  return JSON.stringify(context)
+})
 
 mongoose
   .connect("mongodb://localhost/reinvest", { useNewUrlParser: true })
@@ -44,12 +37,6 @@ const app_name = require("./package.json").name;
 const debug = require("debug")(
   `${app_name}:${path.basename(__filename).split(".")[0]}`
 );
-
-//Google reports start
-// hbs.registerHelper("json", function(context) {
-//   console.log(context, "context");
-//   return JSON.stringify(context);
-// });
 
 const app = express();
 

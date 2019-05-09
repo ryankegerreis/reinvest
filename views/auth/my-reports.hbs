@@ -1,10 +1,17 @@
-My Reports <br>
-<a href="/report" class="btn-large">Create A New Report</a>
+<div>
+  My Reports <br>
+  <a href="/report" class="btn-large">Create A New Report</a>
+</div>
 
-<ul class="list-group">
+
+<div class="card-deck">
   {{#each myReport}}
-  <li>
-    <a href="/my-reports/reportid?id={{this._id}}">{{title}}</a>
-  </li>
+  <div class="card ">
+    <img class="carm-img-top cardimg-size"
+      src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png"
+      alt="House Icon">
+    <p class="cardtxt-size">This property is located at {{address}} in {{city}}, {{state}}.</p>
+    <a class="card-link cardtxt-size" href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
+  </div>
   {{/each}}
-</ul>
+</div>

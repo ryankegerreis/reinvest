@@ -1,95 +1,136 @@
-<div>
+<div class="width">
   <h1>{{title}}</h1>
 </div>
 
+
 {{!-- Basic Info  --}}
-<div>
+<div class="width">
   <h2> {{address}}, {{city}}, {{state}} {{zip}}</h2>
 </div>
 
+<hr>
 
-{{!-- Table 1 --}}
-<table>
-  <tr>
-    <th>Purchase Price: </th>
-    <th>${{purchasePrice}}</th>
-  </tr>
+<div class="container row width">
 
-  <tr>
-    <th>Purchase Closing Costs: </th>
-    <th>${{closingCosts}}</th>
-  </tr>
-
-  <tr>
-    <th>Estimated Repair Costs: </th>
-    <th>${{repairCosts}}</th>
-  </tr>
-
-  <tr>
-    <th>Total Project Cost:</th>
-    <th>${{totalCashNeededRun}}</th>
-  </tr>
-
-  <tr>
-    {{!-- Blank Row --}}
-  </tr>
-
-  <tr>
-    <th>Down Payment: </th>
-    <th>${{downPayment}}</th>
-  </tr>
-
-  <tr>
-    <th>Loan Amount: </th>
-    <th>${{principalRun}}</th>
-  </tr>
-
-  <tr>
-    <th>Loan Points: </th>
-    <th>${{lenderFees}}</th>
-  </tr>
-
-  <tr>
-    <th>Amortized Over: </th>
-    <th>{{loanLength}}</th>
-  </tr>
-
-  <tr>
-    <th>Loan Interest Rate: </th>
-    <th>{{interestRate}}</th>
-  </tr>
-
-  <tr>
-    <th>Monthly P&I: </th>
-    <th>${{monthlyPaymentRun}}</th>
-  </tr>
-
-  <tr>
-    <th>Total Cash Needed: </th>
-    <th>${{totalCashNeededRun}}</th>
-  </tr>
-
-</table>
-
-{{!-- Table 2 --}}
-<table>
-  <tr>
-    <th>{{totalMonthlyIncomeRun}}</th>
-  </tr>
-
-  <tr>
-    <th>{{totalMonthlyExpensesRun}}</th>
-  </tr>
-
-  <tr>
-    <th>{{cashFlowRun}}</th>
-  </tr>
+  <div class="col-xs-3">
+    {{!-- Purchase Table --}}
+    <div class="row">
+      <table class="col-xs-12">
+        <tr>
+          <th>Purchase Price: </th>
+          <th>${{purchasePrice}}</th>
+        </tr>
+      </table>
+    </div>
+    <hr>
+    {{!-- Table 1 --}}
+    <div class="row">
+      <table class="table table-borderless col-xs-12">
 
 
-</table>
+        <tr>
+          <th>Purchase Closing Costs: </th>
+          <th>${{closingCosts}}</th>
+        </tr>
+
+        <tr>
+          <th>Estimated Repair Costs: </th>
+          <th>${{repairCosts}}</th>
+        </tr>
+
+        <tr>
+          <th>Total Project Cost:</th>
+          <th>${{totalCashNeededRun}}</th>
+        </tr>
+
+        <tr>
+          {{!-- Blank Row --}}
+        </tr>
+
+        <tr>
+          <th>Down Payment: </th>
+          <th>${{downPayment}}</th>
+        </tr>
+
+        <tr>
+          <th>Loan Amount: </th>
+          <th>${{principalRun}}</th>
+        </tr>
+
+        <tr>
+          <th>Loan Points: </th>
+          <th>${{lenderFees}}</th>
+        </tr>
+
+        <tr>
+          <th>Amortized Over: </th>
+          <th>{{loanLength}}</th>
+        </tr>
+
+        <tr>
+          <th>Loan Interest Rate: </th>
+          <th>{{interestRate}}</th>
+        </tr>
+
+        <tr>
+          <th>Monthly P&I: </th>
+          <th>${{monthlyPaymentRun}}</th>
+        </tr>
+
+        <tr>
+          <th>Total Cash Needed: </th>
+          <th>${{totalCashNeededRun}}</th>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+
+  {{!-- Table 2 --}}
+  <div class="row">
+    <table class="table table-borderless col-xs-9">
+      <tr>
+        <th>${{totalMonthlyIncomeRun}}</th>
+        <th>${{totalMonthlyExpensesRun}}</th>
+        <th>${{cashFlowRun}}</th>
+        <th>{{capRateRun}}%</th>
+      </tr>
+
+      <tr>
+        <th>Monthly Income</th>
+        <th>Monthly Expenses</th>
+        <th>Monthly Cash Flow</th>
+        <th>Cap Rate</th>
+      </tr>
+
+      <tr>
+        <th>{{netOperatingIncomeRun}}</th>
+        <th>{{totalCashNeededRun}}</th>
+        <th>{{cashOnCashRun}}</th>
+      </tr>
+
+      <tr>
+        <th>Net Operating Income</th>
+        <th>Total Cash Needed</th>
+        <th>Cash On Cash ROI</th>
+      </tr>
+
+    </table>
+  </div>
 
 
-<p>
+
+
+  <div class="width row">
+    <canvas id="myChart" class="col-xs-9"></canvas>
+  </div>
+
+  <script>
+    let reportID = JSON.parse('{{{json reportID}}}')
+  </script>
+
+</div>
+{{!-- <p>
   Fixed Expense ${{fixedExpenseRun}} <br>
   Monthly Income {{totalMonthlyIncomeRun}} <br>
   Variable Expenses {{variableExpensesRun}}<br>
@@ -104,11 +145,11 @@
   annual pretax cashflow {{annualPretaxCashflowRun}}<br>
   monthly payment debt service {{monthlyPaymentRun}}<br>
   yearly payment debt service {{yearlyPaymentRun}}<br>
-  {{!-- Test Purposes Only --}}
-  Variable Expenses: {{variableExpensesRun}}<br>
-  Annual Pretax Cashflow: {{annualPretaxCashflowRun}}<br>
-  Total cash Needed: {{totalCashNeededRun}}<br>
-</p>
+
+Variable Expenses: {{variableExpensesRun}}<br>
+Annual Pretax Cashflow: {{annualPretaxCashflowRun}}<br>
+Total cash Needed: {{totalCashNeededRun}}<br>
+</p> --}}
 
 {{!-- Address: {{address}}<br>
 City: {{city}}<br>
