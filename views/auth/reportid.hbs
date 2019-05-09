@@ -18,7 +18,7 @@
       <table class="col-xs-12">
         <tr>
           <th>Purchase Price: </th>
-          <th>${{purchasePrice}}</th>
+          <th>$ {{purchasePrice}}</th>
         </tr>
       </table>
     </div>
@@ -30,17 +30,17 @@
 
         <tr>
           <th>Purchase Closing Costs: </th>
-          <th>${{closingCosts}}</th>
+          <th>$ {{closingCosts}}</th>
         </tr>
 
         <tr>
           <th>Estimated Repair Costs: </th>
-          <th>${{repairCosts}}</th>
+          <th>$ {{repairCosts}}</th>
         </tr>
 
         <tr>
           <th>Total Project Cost:</th>
-          <th>${{totalCashNeededRun}}</th>
+          <th>$ {{totalCashNeededRun}}</th>
         </tr>
 
         <tr>
@@ -49,37 +49,37 @@
 
         <tr>
           <th>Down Payment: </th>
-          <th>${{downPayment}}</th>
+          <th>$ {{downPayment}}</th>
         </tr>
 
         <tr>
           <th>Loan Amount: </th>
-          <th>${{principalRun}}</th>
+          <th>$ {{principalRun}}</th>
         </tr>
 
         <tr>
           <th>Loan Points: </th>
-          <th>${{lenderFees}}</th>
+          <th>$ {{lenderFees}}</th>
         </tr>
 
         <tr>
           <th>Amortized Over: </th>
-          <th>{{loanLength}}</th>
+          <th>{{loanLength}} Years</th>
         </tr>
 
         <tr>
           <th>Loan Interest Rate: </th>
-          <th>{{interestRate}}</th>
+          <th>{{interestRate}} %</th>
         </tr>
 
         <tr>
           <th>Monthly P&I: </th>
-          <th>${{monthlyPaymentRun}}</th>
+          <th>$ {{monthlyPaymentRun}}</th>
         </tr>
 
         <tr>
           <th>Total Cash Needed: </th>
-          <th>${{totalCashNeededRun}}</th>
+          <th>$ {{totalCashNeededRun}}</th>
         </tr>
 
       </table>
@@ -90,9 +90,9 @@
   <div class="row">
     <table class="table table-borderless col-xs-9">
       <tr>
-        <th>${{totalMonthlyIncomeRun}}</th>
-        <th>${{totalMonthlyExpensesRun}}</th>
-        <th>${{cashFlowRun}}</th>
+        <th>$ {{totalMonthlyIncomeRun}}</th>
+        <th>$ {{totalMonthlyExpensesRun}}</th>
+        <th>$ {{cashFlowRun}}</th>
         <th>{{capRateRun}}%</th>
       </tr>
 
@@ -104,9 +104,9 @@
       </tr>
 
       <tr>
-        <th>{{netOperatingIncomeRun}}</th>
-        <th>{{totalCashNeededRun}}</th>
-        <th>{{cashOnCashRun}}</th>
+        <th>$ {{netOperatingIncomeRun}}</th>
+        <th>$ {{totalCashNeededRun}}</th>
+        <th>{{cashOnCashRun}} %</th>
       </tr>
 
       <tr>

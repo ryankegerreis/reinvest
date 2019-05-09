@@ -22,8 +22,10 @@ hbs.registerHelper('json', function (context) {
   return JSON.stringify(context)
 })
 
+// "mongodb://localhost/reinvest"
+
 mongoose
-  .connect("mongodb://localhost/reinvest", { useNewUrlParser: true })
+  .connect("mongodb+srv://ryan:test@cluster0-0hzfy.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`

@@ -290,7 +290,7 @@ function capRate(reportID) {
 
 //Cash On Cash Return
 function cashOnCash(reportID) {
-  return (annualPretaxCashflow(reportID) / totalCashNeeded(reportID)) * 100
+  return ((annualPretaxCashflow(reportID) / totalCashNeeded(reportID)) * 100).toFixed(2)
 }
 
 //Total Cash Needed
@@ -311,7 +311,7 @@ function monthlyPayment(reportID) {
   var amt = reportID.purchasePrice - reportID.downPayment;
   var intr = reportID.interestRate / 1200;
 
-  return amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1);
+  return (amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1)).toFixed(2);
 
 };
 
