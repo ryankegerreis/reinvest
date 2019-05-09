@@ -211,13 +211,13 @@ module.exports = authRoutes;
 
 // ===================== Functions =======================
 
-function managementExpense(reportID) { reportID.grossMonthlyRent * reportID.managementFees };
+function managementExpense(reportID) { return reportID.grossMonthlyRent * reportID.managementFees };
 
-function vacancyExpense(reportID) { reportID.grossMonthlyRent * reportID.vacancy }
+function vacancyExpense(reportID) { return reportID.grossMonthlyRent * reportID.vacancy }
 
-function maintenanceExpense(reportID) { reportID.grossMonthlyRent * reportID.repairsAndMaintenance };
+function maintenanceExpense(reportID) { return reportID.grossMonthlyRent * reportID.repairsAndMaintenance };
 
-function capExpense(reportID) { reportID.grossMonthlyRent * reportID.capEx };
+function capExpense(reportID) { return reportID.grossMonthlyRent * reportID.capEx };
 
 //Principal
 function principal(reportID) {
@@ -285,12 +285,12 @@ function netOperatingIncome(reportID) {
 
 //Cap Rate
 function capRate(reportID) {
-  return (netOperatingIncome(reportID) / reportID.purchasePrice) * 100;
+  return ((netOperatingIncome(reportID) / reportID.purchasePrice) * 100).toFixed(2);
 }
 
 //Cash On Cash Return
 function cashOnCash(reportID) {
-  return ((annualPretaxCashflow(reportID) / totalCashNeeded(reportID)) * 100).toFixed(2)
+  return ((annualPretaxCashflow(reportID) / totalCashNeeded(reportID)) * 100).toFixed(2);
 }
 
 //Total Cash Needed

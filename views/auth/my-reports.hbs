@@ -6,12 +6,12 @@
 
 <div class="card-deck">
   {{#each myReport}}
-  <div class="card ">
+  <div class="card cardbg">
     <img class="carm-img-top cardimg-size"
       src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png"
       alt="House Icon">
     <p class="cardtxt-size">This property is located at {{address}} in {{city}}, {{state}}.</p>
-    <a class="card-link cardtxt-size" href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
+    <a class="card-link cardtxt-size btn-primary " href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
   </div>
   {{/each}}
 </div>

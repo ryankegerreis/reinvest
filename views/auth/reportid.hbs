@@ -1,22 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1> {{title}}</h1> <br>
+      <h2> This house is located at {{address}} in {{city}}, {{state}} {{zip}}.</h2>
+      <hr>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <!-------------------- TABLE HERE-------------------->
+      {{!-- ------------------ TABLE HERE----------------- --}}
       <table class="table table-borderless col-xs-9 table-border">
 
+        <tr>
+          <th class="thin">Purchase Price </th>
+          <th class="text-md-right">$ {{purchasePrice}}</th>
+        </tr>
 
         <tr>
-          <th class="thin">Purchase Closing Costs: </th>
+          <th class="thin">Purchase Closing Costs </th>
           <th class="text-md-right">$ {{closingCosts}}</th>
         </tr>
 
         <tr>
-          <th class="thin">Estimated Repair Costs: </th>
+          <th class="thin">Estimated Repair Costs </th>
           <th class="text-md-right">$ {{repairCosts}}</th>
         </tr>
 
         <tr>
-          <th class="thin">Total Project Cost:</th>
+          <th class="thin">Total Project Cost </th>
           <th class="text-md-right">$ {{totalCashNeededRun}}</th>
         </tr>
 
@@ -25,37 +39,37 @@
         </tr>
 
         <tr>
-          <th class="thin">Down Payment: </th>
+          <th class="thin">Down Payment </th>
           <th class="text-md-right">$ {{downPayment}}</th>
         </tr>
 
         <tr>
-          <th class="thin">Loan Amount: </th>
+          <th class="thin">Loan Amount </th>
           <th class="text-md-right">$ {{principalRun}}</th>
         </tr>
 
         <tr>
-          <th class="thin">Loan Points: </th>
+          <th class="thin">Loan Points </th>
           <th class="text-md-right">$ {{lenderFees}}</th>
         </tr>
 
         <tr>
-          <th class="thin">Amortized Over: </th>
+          <th class="thin">Amortized Over </th>
           <th class="text-md-right">{{loanLength}} Years</th>
         </tr>
 
         <tr>
-          <th class="thin">Loan Interest Rate: </th>
+          <th class="thin">Loan Interest Rate </th>
           <th class="text-md-right">{{interestRate}} %</th>
         </tr>
 
         <tr>
-          <th class="thin">Monthly P&I: </th>
+          <th class="thin">Monthly P&I </th>
           <th class="text-md-right">$ {{monthlyPaymentRun}}</th>
         </tr>
 
         <tr>
-          <th class="thin">Total Cash Needed: </th>
+          <th class="thin">Total Cash Needed </th>
           <th class="text-md-right">$ {{totalCashNeededRun}}</th>
         </tr>
 
@@ -63,42 +77,56 @@
     </div>
     <div class="col-md-9">
       <div class="row">
-        <div class="col-md-12">
-          <!--------------------TABLE HERE VV TABLE RESPONSIVE HERE.. MAYBE CHANGE-------------------->
-          <table class="table table-responsive table-borderless col-xs-9">
-            <tr>
-              <th>$ {{totalMonthlyIncomeRun}}</th>
-              <th>$ {{totalMonthlyExpensesRun}}</th>
-              <th>$ {{cashFlowRun}}</th>
-              <th>{{capRateRun}}%</th>
-            </tr>
+        <div class="col-md-12 text-center">
+          {{!-- ------------------TABLE HERE VV TABLE RESPONSIVE HERE.. MAYBE CHANGE------------------ --}}
 
-            <tr>
-              <th class="thin">Monthly Income</th>
-              <th class="thin">Monthly Expenses</th>
-              <th class="thin">Monthly Cash Flow</th>
-              <th class="thin">Cap Rate</th>
-            </tr>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-8">
+                <table class="table table-responsive table-borderless col-xs-9">
+                  <tr>
+                    <th>$ {{totalMonthlyIncomeRun}}</th>
+                    <th>$ {{totalMonthlyExpensesRun}}</th>
+                    <th>$ {{cashFlowRun}}</th>
+                    <th>{{capRateRun}}%</th>
+                  </tr>
 
-            <tr>
-              <th>$ {{netOperatingIncomeRun}}</th>
-              <th>$ {{totalCashNeededRun}}</th>
-              <th>{{cashOnCashRun}} %</th>
-            </tr>
+                  <tr>
+                    <th class="thin">Monthly Income</th>
+                    <th class="thin">Monthly Expenses</th>
+                    <th class="thin">Monthly Cash Flow</th>
+                    <th class="thin">Cap Rate</th>
+                  </tr>
 
-            <tr>
-              <th class="thin">Net Operating Income</th>
-              <th class="thin">Total Cash Needed</th>
-              <th class="thin">Cash On Cash ROI</th>
-            </tr>
+                  <tr>
+                    <th>$ {{netOperatingIncomeRun}}</th>
+                    <th>$ {{totalCashNeededRun}}</th>
+                    <th>{{cashOnCashRun}} %</th>
+                  </tr>
 
-          </table>
+                  <tr>
+                    <th class="thin">Net Operating Income</th>
+                    <th class="thin">Total Cash Needed</th>
+                    <th class="thin">Cash On Cash ROI</th>
+                  </tr>
+
+                </table>
+              </div>
+              <div class="col-md-2">
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <!---------------------------- CHART  HERE------------------------------->
-          <canvas id="myChart" class="width" width="100" height="100"></canvas>
+          {{!-- ---------------------------- CHART  HERE----------------------------- --}}
+          <div class="width">
+            <canvas id="myChart" width="100" height="100"></canvas>
+          </div>
         </div>
       </div>
     </div>

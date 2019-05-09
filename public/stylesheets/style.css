@@ -15,7 +15,8 @@ a {
   color: #00b7ff; }
 
 .link-margin {
-  margin: 20px; }
+  margin: 10px;
+  padding: 10px; }
 
 .nav-correction {
   position: fixed;
@@ -47,8 +48,11 @@ a {
   text-align: center;
   text-decoration-color: white; }
 
+.cardbg {
+  background-color: #00B3B3; }
+
 .width {
-  height: 10vh;
+  width: 50%;
   margin-left: auto;
   margin-right: auto; }
 
@@ -58,5 +62,10 @@ a {
 .table-fix {
   margin-left: .7vw;
   font-size: 1.3em; }
+
+.button-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 /*# sourceMappingURL=style.css.map */

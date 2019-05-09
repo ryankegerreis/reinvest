@@ -1,20 +1,25 @@
 <body class="background-image">
 
-  <form action="/login" method="POST">
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" value="ryan" name="username">
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" value="test" name="password">
-    </div>
-    {{#if message}}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
-    <div>
-      <input type="submit" value="Log In">
-    </div>
-  </form>
+
+  <div class="rounded-lg container">
+    <form action="/login" method="POST">
+      <div class="row">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" value="ryan" name="username">
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" value="test" name="password">
+        </div>
+      </div>
+      {{#if message}}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <div class="row">
+        <input type="submit" value="Log In">
+      </div>
+    </form>
+  </div>
 
 </body>
