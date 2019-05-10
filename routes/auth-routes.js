@@ -114,6 +114,27 @@ authRoutes.get("/my-reports", ensureAuthenticated, (req, res, next) => {
   });
 });
 
+// Delete Page
+authRoutes.post("/my-reports/delete", (req, res, next) => {
+  console.log("Deleted a report.");
+  Report.findByIdAndDelete({ _id: req.query.id }).then(reportID => {
+    console.log(reportID);
+    res.redirect("back");
+  })
+});
+
+// Update Page
+authRoutes.post('/report/update', (req, res, next) => {
+  const { Report } = req.body;
+  Report.update({ _id: req.query.id }, { $push: { update: { Report } } })
+    .then(newReport => {
+      res.redirect('back')
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+});
+
 //Report View by ID Page
 authRoutes.get("/my-reports/reportid", (req, res, next) => {
   console.log(`Went to report id page`, req.query);
@@ -211,7 +232,7 @@ module.exports = authRoutes;
 
 // ===================== Functions =======================
 
-function managementExpense(reportID) { return reportID.grossMonthlyRent * reportID.managementFees };
+function managementExpense(reportID) { return (reportID.grossMonthlyRent * reportID.managementFees) / 12 };
 
 function vacancyExpense(reportID) { return reportID.grossMonthlyRent * reportID.vacancy }
 
@@ -300,10 +321,10 @@ function totalCashNeeded(reportID) {
 
 //Annual Pretax Cashflow
 function annualPretaxCashflow(reportID) {
-  let vacancyExpense = reportID.grossMonthlyRent * reportID.vacancy;
 
-  return ((reportID.grossMonthlyRent + reportID.otherIncome) - (vacancyExpense + operatingExpenses(reportID) + monthlyPayment(reportID))) * 12;
+  return ((reportID.grossMonthlyRent + reportID.otherIncome) - ((reportID.grossMonthlyRent * reportID.vacancy) + operatingExpenses(reportID) + monthlyPayment(reportID))) * 12;
 }
+
 
 //Monthly Debt Service Payment
 function monthlyPayment(reportID) {
@@ -311,7 +332,7 @@ function monthlyPayment(reportID) {
   var amt = reportID.purchasePrice - reportID.downPayment;
   var intr = reportID.interestRate / 1200;
 
-  return (amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1)).toFixed(2);
+  return parseInt((amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1)).toFixed(2), 10);
 
 };
 

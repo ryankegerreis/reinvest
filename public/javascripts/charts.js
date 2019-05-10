@@ -27,7 +27,7 @@ var chart = new Chart(ctx, {
     },
     title: {
       display: true,
-      text: "Expenses",
+      text: "Monthly Expenses",
       fontSize: 20
     }
   }
@@ -140,7 +140,7 @@ function monthlyPayment(reportID) {
   var amt = reportID.purchasePrice - reportID.downPayment;
   var intr = reportID.interestRate / 1200;
 
-  return (amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1)).toFixed(2);
+  return parseInt((amt * (intr * Math.pow((1 + intr), term)) / (Math.pow((1 + intr), term) - 1)).toFixed(2), 10);
 
 };
 

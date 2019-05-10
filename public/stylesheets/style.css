@@ -30,6 +30,32 @@ a {
   background-color: #cccccc;
   margin-top: 5px; }
 
+.bg-box {
+  margin-top: 20vh;
+  color: white; }
+
+.btn-space {
+  margin-top: 10px; }
+
+.left-center {
+  margin-left: 25%; }
+
+.left-center-small {
+  margin-left: 15%; }
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.border {
+  border-width: 2px;
+  border-style: solid;
+  padding: 5px; }
+
+.smallpadding {
+  margin: 10px; }
+
 .canvaschart {
   width: 400px;
   height: 400px; }
@@ -50,6 +76,12 @@ a {
 
 .cardbg {
   background-color: #00B3B3; }
+
+.white-text {
+  color: white; }
+
+.form-shadow {
+  box-shadow: 2px 2px 7px 1px #54626F; }
 
 .width {
   width: 50%;

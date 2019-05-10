@@ -1,17 +1,26 @@
 <div>
-  My Reports <br>
-  <a href="/report" class="btn-large">Create A New Report</a>
+  <h1>My Reports </h1>
+  <br>
+  <a href="/report" class="btn-light btn-lg border">Create A New Report</a>
 </div>
 
 
 <div class="card-deck">
   {{#each myReport}}
-  <div class="card cardbg">
+  <div class="card cardbg smallpadding">
     <img class="carm-img-top cardimg-size"
       src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png"
       alt="House Icon">
-    <p class="cardtxt-size">This property is located at {{address}} in {{city}}, {{state}}.</p>
-    <a class="card-link cardtxt-size btn-primary " href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
+    <p class="cardtxt-size white-text">This property is located at {{address}} in {{city}}, {{state}}.</p>
+    <a class="card-link cardtxt-size btn-lg white-text " href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
+    <form action="/my-reports/delete/?id={{this.id}}" method="POST" class="btn-sm">
+      <button>Delete {{title}}</button>
+    </form>
+
+    <form action="/my-reports/update/?id={{this.id}}" method="POST" class="btn-sm">
+      <button>Update {{title}}</button>
+    </form>
+
   </div>
   {{/each}}
 </div>
