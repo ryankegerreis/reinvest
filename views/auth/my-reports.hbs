@@ -13,13 +13,19 @@
       alt="House Icon">
     <p class="cardtxt-size white-text">This property is located at {{address}} in {{city}}, {{state}}.</p>
     <a class="card-link cardtxt-size btn-lg white-text " href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
-    <form action="/my-reports/delete/?id={{this.id}}" method="POST" class="btn-sm">
+    <form action="/my-reports/delete?id={{this.id}}" method="POST" class="btn-sm">
       <button>Delete {{title}}</button>
     </form>
 
-    <form action="/my-reports/update/?id={{this.id}}" method="POST" class="btn-sm">
+    {{!-- <form action="/my-reports/edit?id={{this.id}}" method="GET" class="btn-sm">
       <button>Update {{title}}</button>
-    </form>
+    </form> --}}
+
+    <a href="/my-reports/edit?id={{this.id}}">
+      <button>Update {{title}}</button>
+    </a>
+
+
 
   </div>
   {{/each}}

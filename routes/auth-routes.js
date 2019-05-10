@@ -124,15 +124,31 @@ authRoutes.post("/my-reports/delete", (req, res, next) => {
 });
 
 // Update Page
-authRoutes.post('/report/update', (req, res, next) => {
-  const { Report } = req.body;
-  Report.update({ _id: req.query.id }, { $push: { update: { Report } } })
+authRoutes.post('/my-reports/edit', (req, res, next) => {
+  // const { Report } = req.body;
+  console.log(req.body, 1234, req.query.id)
+  Report.findByIdAndUpdate(req.query.id, req.body)
     .then(newReport => {
       res.redirect('back')
     })
     .catch((error) => {
       console.log(error)
     })
+});
+
+
+authRoutes.get("/my-reports/edit", ensureAuthenticated, (req, res, next) => {
+  //Report.findOne({ owner: req.user._id }, (err, myReport) => {
+  Report.findOne({ _id: req.query.id }, (err, myReport) => {
+
+    //console.log('err', err, 'my report', myReport)
+    if (err) {
+      return next(err);
+    }
+    res.render(
+      "auth/reportedit", myReport
+    );
+  });
 });
 
 //Report View by ID Page
