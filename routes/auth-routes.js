@@ -129,7 +129,7 @@ authRoutes.post('/my-reports/edit', (req, res, next) => {
   console.log(req.body, 1234, req.query.id)
   Report.findByIdAndUpdate(req.query.id, req.body)
     .then(newReport => {
-      res.redirect('back')
+      res.redirect('/my-reports')
     })
     .catch((error) => {
       console.log(error)
