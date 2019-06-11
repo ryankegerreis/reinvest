@@ -1,7 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 *{
-  font-family:Roboto;
+  font-family:'Ubuntu';
 }
 
 .font-report {
@@ -130,12 +130,56 @@ a {
   font-size: 1.3em;
 }
 
-// .center{
-//   margin-left: auto;
-//   margin-right: auto;
-// }
 .button-center{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+//New Report
+
+.form-border {
+  border-width: 2px;
+}
+
+//Desktop
+@media only screen and (min-width: 700px) {
+  .form-div{
+    width:50%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+//Mobile
+@media only screen and (max-width: 600px) {
+  form-responsive {
+    width:100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  }
+}
+
+
+
+.form-page{
+  h3,h1{
+    text-align: center;
+  }
+
+  h1{
+  padding-bottom: 20px;
+  }
+
+  hr{
+    border: 2px solid #0080ff;
+  }
+
+  button{
+    background-color: #0080ff;
+    color: white;
+  }
+
 }

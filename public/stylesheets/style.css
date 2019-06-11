@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 * {
-  font-family: Roboto; }
+  font-family: 'Ubuntu'; }
 
 .font-report {
   font-size: 15px; }
@@ -99,5 +100,35 @@ a {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.form-border {
+  border-width: 2px; }
+
+@media only screen and (min-width: 700px) {
+  .form-div {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media only screen and (max-width: 600px) {
+  form-responsive {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; } }
+
+.form-page h3, .form-page h1 {
+  text-align: center; }
+
+.form-page h1 {
+  padding-bottom: 20px; }
+
+.form-page hr {
+  border: 2px solid #0080ff; }
+
+.form-page button {
+  background-color: #0080ff;
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */
