@@ -6,4 +6,9 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
+//Get About Page
+router.get("/about", (req, res, next) => {
+  res.render("about");
+});
+
 module.exports = router;
