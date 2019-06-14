@@ -41,11 +41,6 @@ a {
 }
 
 
-
-
-
-
-
 // My Reports
 
 .bg-box{
@@ -104,11 +99,12 @@ a {
 }
 
 .cardbg{
-  background-color:#00B3B3;
+  // background-color:#00B3B3;
+
 }
 
 .white-text{
-  color: white;
+  color: black;
 }
 
 .form-shadow{
@@ -136,6 +132,20 @@ a {
   justify-content: center;
 }
 
+.my-reports-page{
+
+  button{
+    background-color: #0080ff;
+    color: white;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 20px;
+  }
+  
+}
+
+
 //New Report
 
 .form-border {
@@ -162,9 +172,29 @@ a {
   }
 }
 
-
-
 .form-page{
+  h3,h1{
+    text-align: center;
+  }
+
+  h1{
+  padding-bottom: 20px;
+  }
+
+  hr{
+    border: 2px solid #0080ff;
+    border-radius: 25px;
+  }
+
+  button{
+    background-color: #0080ff;
+    color: white;
+  }
+
+}
+
+//Edit Page
+.edit-page{
   h3,h1{
     text-align: center;
   }

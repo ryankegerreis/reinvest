@@ -1,29 +1,39 @@
-<div>
-  <h1>My Reports </h1>
-  <br>
-  <a href="/report" class="btn-light btn-lg border">Create A New Report</a>
-</div>
+<body class="my-reports-page">
 
 
-<div class="card-deck">
-  {{#each myReport}}
-  <div class="card cardbg smallpadding">
-    <img class="carm-img-top cardimg-size"
-      src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png"
-      alt="House Icon">
-    <p class="cardtxt-size white-text">This property is located at {{address}} in {{city}}, {{state}}.</p>
-    <a class="card-link cardtxt-size btn-lg white-text " href="/my-reports/reportid?id={{this._id}}">View {{title}}</a>
-    <form action="/my-reports/delete?id={{this.id}}" method="POST" class="btn-sm">
-      <button>Delete {{title}}</button>
-    </form>
-
-
-    <a href="/my-reports/edit?id={{this.id}}" class="btn-sm">
-      <button>Update {{title}}</button>
-    </a>
-
-
-
+  <div>
+    <h1>My Reports </h1>
+    <br>
+    {{!-- <a href="/report" class="btn-light btn-lg border">Create A New Report</a> --}}
+    <form method="get" action="/report"><button type="submit" class="btn-lg">Create New Report</button></form>
   </div>
-  {{/each}}
-</div>
+
+
+  <div class="card-deck">
+    {{#each myReport}}
+    <div class="card cardbg smallpadding">
+      <img class="carm-img-top cardimg-size"
+        src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png"
+        alt="House Icon">
+      <p class="cardtxt-size white-text">This property is located at {{address}} in {{city}}, {{state}}.</p>
+      <a class="card-link cardtxt-size btn-lg white-text " href="/my-reports/reportid?id={{this._id}}">View
+        {{title}}</a>
+
+      {{!-- Update --}}
+      <a href="/my-reports/edit?id={{this.id}}" class="btn-lg">
+        <button class="btn-lg">Update {{title}}</button>
+      </a>
+
+      {{!-- Delete --}}
+      <form method="POST" action="/my-reports/delete?id={{this.id}}"><button type="submit"
+          class="btn-lg btn-danger">Delete
+          {{title}}</button></form>
+
+
+
+
+    </div>
+    {{/each}}
+  </div>
+
+</body>

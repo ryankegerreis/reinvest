@@ -1,183 +1,227 @@
-<h1>Edit report</h1>
+<body class="edit-page">
 
-<form action="" method="POST" id="form-container">
+  <div class="form-div form-responsive">
 
-  {{!-- General Information --}}
-  <div class="form-group">
-    {{!-- Report Title  --}}
-    <label for="title">Report Title: </label>
-    <input id="title" type="text" name="title" placeholder="Enter Report Title" value="{{title}}"
-      class="form-control form-shadow">
-    <br><br>
+    <h1>Edit report</h1>
 
-    {{!-- Description  --}}
-    <label for="address">Address: </label>
-    <input id="address" type="text" name="address" value="{{address}}" class="form-control form-shadow">
-    <br><br>
+    <form action="" method="POST" id="form-container">
 
-    {{!-- City  --}}
-    <label for="city">City: </label>
-    <input id="city" type="text" name="city" value="{{city}}" class="form-control form-shadow">
-    <br><br>
+      {{!-- General Information --}}
+      <div>
 
-    {{!-- State  --}}
-    <label for="state">State: </label>
-    <input id="state" type="text" name="state" value="{{state}}" class="form-control form-shadow">
-    <br> <br>
+        <h3>General Information</h3>
+        <hr>
 
-    {{!-- Zip Code  --}}
-    <label for="zip">Zip Code: </label>
-    <input id="zip" type="text" name="zip" value="{{zip}}" class="form-control form-shadow">
-    <br> <br>
+        <div class="form-group">
+          {{!-- Report Title  --}}
+          <label for="title">Report Title: </label>
+          <input id="title" type="text" name="title" placeholder="Enter Report Title" value="{{title}}"
+            class="form-control">
+          <br><br>
 
-    {{!-- Property Tax  --}}
-    <label for="propertyTax">Monthly Property Tax: </label>
-    <input id="propertyTax" type="text" name="propertyTax" value="{{propertyTax}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Description  --}}
+          <label for="address">Address: </label>
+          <input id="address" type="text" name="address" value="{{address}}" class="form-control">
+          <br><br>
 
-    {{!-- Purchase Details --}}
+          {{!-- City  --}}
+          <label for="city">City: </label>
+          <input id="city" type="text" name="city" value="{{city}}" class="form-control">
+          <br><br>
 
-    {{!-- Purchase Price  --}}
-    <label for="purchasePrice">Purchase Price: </label>
-    <input id="purchasePrice" type="text" name="purchasePrice" value="{{purchasePrice}}"
-      class="form-control form-shadow">
-    <br> <br>
+          {{!-- State  --}}
+          <label for="state">State: </label>
+          <input id="state" type="text" name="state" value="{{state}}" class="form-control">
+          <br> <br>
 
-    {{!-- ARV --}}
-    <label for="ARV">Estimated After Repair Value: </label>
-    <input id="ARV" type="text" name="ARV" value="{{ARV}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Zip Code  --}}
+          <label for="zip">Zip Code: </label>
+          <input id="zip" type="text" name="zip" value="{{zip}}" class="form-control">
+          <br> <br>
 
-    {{!-- Closing Costs  --}}
-    <label for="closingCosts">Closing Costs: </label>
-    <input id="closingCosts" type="text" name="closingCosts" value="{{closingCosts}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Property Tax  --}}
+          <label for="propertyTax">Monthly Property Tax: </label>
+          <input id="propertyTax" type="text" name="propertyTax" value="{{propertyTax}}" class="form-control">
+          <br> <br>
+        </div>
 
-    {{!-- Repair Costs --}}
-    <label for="repairCosts">Estimated Repair Costs: </label>
-    <input id="repairCosts" type="text" name="repairCosts" value="{{repairCosts}}" class="form-control form-shadow">
-    <br> <br>
+        {{!-- Purchase Details --}}
 
-    {{!-- Loan Details --}}
+        <h3>Purchase Details</h3>
+        <hr>
 
-    {{!-- Down Payment --}}
-    <label for="downPayment">Down Payment of Purchase Price: </label>
-    <input id="downPayment" type="text" name="downPayment" value="{{downPayment}}" class="form-control form-shadow">
-    <br> <br>
+        <div>
 
-    {{!-- Interest Rate --}}
-    <label for="interestRate">Interest Rate: </label>
-    <input id="interestRate" type="text" name="interestRate" value="{{interestRate}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Purchase Price  --}}
+          <label for="purchasePrice">Purchase Price: </label>
+          <input id="purchasePrice" type="text" name="purchasePrice" value="{{purchasePrice}}" class="form-control">
+          <br> <br>
 
-    {{!-- Lender Fees --}}
-    <label for="lenderFees">Additional Lender Fees: </label>
-    <input id="lenderFees" type="text" name="lenderFees" value="{{lenderFees}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- ARV --}}
+          <label for="ARV">Estimated After Repair Value: </label>
+          <input id="ARV" type="text" name="ARV" value="{{ARV}}" class="form-control">
+          <br> <br>
 
-    {{!-- Loan Length --}}
-    <label for="loanLength">Length of Loan: </label>
-    <input id="loanLength" type="text" name="loanLength" value="{{loanLength}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Closing Costs  --}}
+          <label for="closingCosts">Closing Costs: </label>
+          <input id="closingCosts" type="text" name="closingCosts" value="{{closingCosts}}" class="form-control">
+          <br> <br>
 
-    {{!-- Income  --}}
+          {{!-- Repair Costs --}}
+          <label for="repairCosts">Estimated Repair Costs: </label>
+          <input id="repairCosts" type="text" name="repairCosts" value="{{repairCosts}}" class="form-control">
+          <br> <br>
+        </div>
+        {{!-- Loan Details --}}
 
-    {{!-- Gross Monthly Rent --}}
-    <label for="grossMonthlyRent">Gross Monthly Rent: </label>
-    <input id="grossMonthlyRent" type="text" name="grossMonthlyRent" value="{{grossMonthlyRent}}"
-      class="form-control form-shadow">
-    <br> <br>
+        <h3>Loan Details</h3>
+        <hr>
 
-    {{!-- Other Income --}}
-    <label for="otherIncome">Other Income: </label>
-    <input id="otherIncome" type="text" name="otherIncome" value="{{otherIncome}}" class="form-control form-shadow">
-    <br> <br>
+        <div>
 
-    {{!-- Fixed Expenses --}}
+          {{!-- Down Payment --}}
+          <label for="downPayment">Down Payment of Purchase Price: </label>
+          <input id="downPayment" type="text" name="downPayment" value="{{downPayment}}" class="form-control">
+          <br> <br>
 
-    {{!-- Electricity --}}
-    <label for="electricity">Electricity: </label>
-    <input id="electricity" type="text" name="electricity" value="{{electricity}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Interest Rate --}}
+          <label for="interestRate">Interest Rate: </label>
+          <input id="interestRate" type="text" name="interestRate" value="{{interestRate}}" class="form-control">
+          <br> <br>
 
-    {{!-- Water and Sewer --}}
-    <label for="waterAndSewer">Water and Sewer: </label>
-    <input id="waterAndSewer" type="text" name="waterAndSewer" value="{{waterAndSewer}}"
-      class="form-control form-shadow">
-    <br> <br>
+          {{!-- Lender Fees --}}
+          <label for="lenderFees">Additional Lender Fees: </label>
+          <input id="lenderFees" type="text" name="lenderFees" value="{{lenderFees}}" class="form-control">
+          <br> <br>
 
-    {{!-- PMI --}}
-    <label for="PMI">Private Mortgage Insurance: </label>
-    <input id="PMI" type="text" name="PMI" value="{{PMI}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Loan Length --}}
+          <label for="loanLength">Length of Loan: </label>
+          <input id="loanLength" type="text" name="loanLength" value="{{loanLength}}" class="form-control">
+          <br> <br>
+        </div>
 
-    {{!-- Garbage --}}
-    <label for="garbage">Garbage: </label>
-    <input id="garbage" type="text" name="garbage" value="{{garbage}}" class="form-control form-shadow">
-    <br> <br>
+        {{!-- Income  --}}
 
-    {{!-- HOA Fees --}}
-    <label for="HOA">HOA Fees: </label>
-    <input id="HOA" type="text" name="HOA" value="{{HOA}}" class="form-control form-shadow">
-    <br> <br>
+        <h3>Income Estimations</h3>
+        <hr>
 
-    {{!-- Property Insurance --}}
-    <label for="propertyInsurance">Property Insurance: </label>
-    <input id="propertyInsurance" type="text" name="propertyInsurance" value="{{propertyInsurance}}"
-      class="form-control form-shadow">
-    <br> <br>
+        <div>
 
-    {{!-- Variable Expenses --}}
+          {{!-- Gross Monthly Rent --}}
+          <label for="grossMonthlyRent">Gross Monthly Rent: </label>
+          <input id="grossMonthlyRent" type="text" name="grossMonthlyRent" value="{{grossMonthlyRent}}"
+            class="form-control">
+          <br> <br>
 
-    {{!-- Vacancy --}}
-    <label for="vacancy">Vacancy: </label>
-    <input id="vacancy" type="text" name="vacancy" value="{{vacancy}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Other Income --}}
+          <label for="otherIncome">Other Income: </label>
+          <input id="otherIncome" type="text" name="otherIncome" value="{{otherIncome}}" class="form-control">
+          <br> <br>
+        </div>
 
-    {{!-- Repairs and Maintenance --}}
-    <label for="repairsAndMaintenance">Repairs and Maintenance: </label>
-    <input id="repairsAndMaintenance" type="text" name="repairsAndMaintenance" value="{{repairsAndMaintenance}}"
-      class="form-control form-shadow">
-    <br> <br>
+        {{!-- Fixed Expenses --}}
 
-    {{!-- Capital Expenditure --}}
-    <label for="capEx">Capital Expenditure: </label>
-    <input id="capEx" type="text" name="capEx" value="{{capEx}}" class="form-control form-shadow">
-    <br> <br>
+        <h3>Fixed Expenses</h3>
+        <hr>
 
-    {{!-- Management Fees --}}
-    <label for="managementFees">Management Fees: </label>
-    <input id="managementFees" type="text" name="managementFees" value="{{managementFees}}"
-      class="form-control form-shadow">
-    <br> <br>
+        <div>
 
-    {{!-- Future Assumptions  --}}
+          {{!-- Electricity --}}
+          <label for="electricity">Electricity: </label>
+          <input id="electricity" type="text" name="electricity" value="{{electricity}}" class="form-control">
+          <br> <br>
 
-    {{!-- Income Growth --}}
-    <label for="incomeGrowth">Income Growth: </label>
-    <input id="incomeGrowth" type="text" name="incomeGrowth" value="{{incomeGrowth}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- Water and Sewer --}}
+          <label for="waterAndSewer">Water and Sewer: </label>
+          <input id="waterAndSewer" type="text" name="waterAndSewer" value="{{waterAndSewer}}" class="form-control">
+          <br> <br>
 
-    {{!-- Property Value Growth --}}
-    <label for="pvGrowth">Property Value Growth: </label>
-    <input id="pvGrowth" type="text" name="pvGrowth" value="{{pvGrowth}}" class="form-control form-shadow">
-    <br> <br>
+          {{!-- PMI --}}
+          <label for="PMI">Private Mortgage Insurance: </label>
+          <input id="PMI" type="text" name="PMI" value="{{PMI}}" class="form-control">
+          <br> <br>
 
-    {{!-- Expense Growth --}}
-    <label for="expenseGrowth">Expense Growth: </label>
-    <input id="expenseGrowth" type="text" name="expenseGrowth" value="{{expenseGrowth}}"
-      class="form-control form-shadow">
-    <br> <br>
+          {{!-- Garbage --}}
+          <label for="garbage">Garbage: </label>
+          <input id="garbage" type="text" name="garbage" value="{{garbage}}" class="form-control">
+          <br> <br>
 
-    {{!-- Sales Expense --}}
-    <label for="salesExpenses">Sales Expense: </label>
-    <input id="salesExpenses" type="text" name="salesExpenses" value="{{salesExpense}}"
-      class="form-control form-shadow">
-    <br> <br>
+          {{!-- HOA Fees --}}
+          <label for="HOA">HOA Fees: </label>
+          <input id="HOA" type="text" name="HOA" value="{{HOA}}" class="form-control">
+          <br> <br>
+
+          {{!-- Property Insurance --}}
+          <label for="propertyInsurance">Property Insurance: </label>
+          <input id="propertyInsurance" type="text" name="propertyInsurance" value="{{propertyInsurance}}"
+            class="form-control">
+          <br> <br>
+        </div>
+
+        {{!-- Variable Expenses --}}
+
+        <h3>Variable Expenses</h3>
+        <hr>
+
+        <div>
+
+          {{!-- Vacancy --}}
+          <label for="vacancy">Vacancy: </label>
+          <input id="vacancy" type="text" name="vacancy" value="{{vacancy}}" class="form-control">
+          <br> <br>
+
+          {{!-- Repairs and Maintenance --}}
+          <label for="repairsAndMaintenance">Repairs and Maintenance: </label>
+          <input id="repairsAndMaintenance" type="text" name="repairsAndMaintenance" value="{{repairsAndMaintenance}}"
+            class="form-control">
+          <br> <br>
+
+          {{!-- Capital Expenditure --}}
+          <label for="capEx">Capital Expenditure: </label>
+          <input id="capEx" type="text" name="capEx" value="{{capEx}}" class="form-control">
+          <br> <br>
+
+          {{!-- Management Fees --}}
+          <label for="managementFees">Management Fees: </label>
+          <input id="managementFees" type="text" name="managementFees" value="{{managementFees}}" class="form-control">
+          <br> <br>
+        </div>
+
+        {{!-- Future Assumptions  --}}
+
+        <h3>Future Assumptions</h3>
+        <hr>
+
+        <div>
+
+          {{!-- Income Growth --}}
+          <label for="incomeGrowth">Income Growth: </label>
+          <input id="incomeGrowth" type="text" name="incomeGrowth" value="{{incomeGrowth}}" class="form-control">
+          <br> <br>
+
+          {{!-- Property Value Growth --}}
+          <label for="pvGrowth">Property Value Growth: </label>
+          <input id="pvGrowth" type="text" name="pvGrowth" value="{{pvGrowth}}" class="form-control">
+          <br> <br>
+
+          {{!-- Expense Growth --}}
+          <label for="expenseGrowth">Expense Growth: </label>
+          <input id="expenseGrowth" type="text" name="expenseGrowth" value="{{expenseGrowth}}" class="form-control">
+          <br> <br>
+
+          {{!-- Sales Expense --}}
+          <label for="salesExpenses">Sales Expense: </label>
+          <input id="salesExpenses" type="text" name="salesExpenses" value="{{salesExpense}}" class="form-control">
+          <br> <br>
+        </div>
+
+      </div>
+
+      <br> <br>
+      <button class="btn-primary btn-lg">Update Report</button>
+
+    </form>
 
   </div>
 
-  <br> <br>
-  <button class="btn-primary btn-lg">Create Report</button>
-
-</form>
+</body>

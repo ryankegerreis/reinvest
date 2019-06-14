@@ -75,11 +75,8 @@ a {
   text-align: center;
   text-decoration-color: white; }
 
-.cardbg {
-  background-color: #00B3B3; }
-
 .white-text {
-  color: white; }
+  color: black; }
 
 .form-shadow {
   box-shadow: 2px 2px 7px 1px #54626F; }
@@ -100,6 +97,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.my-reports-page button {
+  background-color: #0080ff;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px; }
 
 .form-border {
   border-width: 2px; }
@@ -129,6 +134,20 @@ a {
   border-radius: 25px; }
 
 .form-page button {
+  background-color: #0080ff;
+  color: white; }
+
+.edit-page h3, .edit-page h1 {
+  text-align: center; }
+
+.edit-page h1 {
+  padding-bottom: 20px; }
+
+.edit-page hr {
+  border: 2px solid #0080ff;
+  border-radius: 25px; }
+
+.edit-page button {
   background-color: #0080ff;
   color: white; }
 
